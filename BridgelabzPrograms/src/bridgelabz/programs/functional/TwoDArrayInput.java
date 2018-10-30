@@ -23,7 +23,18 @@ public class TwoDArrayInput {
 		// Taking input for no of column from user
 		int N = Utility.getInt();
 		// calling method of Utility class
-		Utility.get2DArrayInput(M, N);
+		int[][] input2DArray=Utility.get2DArrayInput(M, N);
+		
+
+		
+for(int i=0;i<M;i++) {
+			
+			for(int j=0;j<N;j++) {
+		 
+				System.out.print(input2DArray[i][j]+" ");
+			}
+			System.out.println("");
+		}
 
 	}
 

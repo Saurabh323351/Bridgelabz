@@ -154,7 +154,7 @@ public class Utility {
 	
 	
 	/**This method is used to get nth Harmonic value 
-	 * @param n
+	 * @param n user value
 	 */
 	public static void nthHarmonicValue(int n) {
 		float sum=0;
@@ -167,8 +167,8 @@ public class Utility {
 	
 	
 	
-	/**Prime Factorization
-	 * @param n
+	/** This  method is used to get All Prime Factors of given Number
+	 * @param n user value 
 	 */
 	public static void getPrimeFactor(int n) {
 		boolean isPrime=true;
@@ -196,10 +196,10 @@ public class Utility {
 		
 	
 	
-	/** Gambling Program
-	 * @param stake
+	/** This is used to get win percentage and loss percentage in gambling
+	 * @param stake 
 	 * @param goal
-	 * @param times
+	 * @param times no of times user wants to play
 	 */
 	public static void gamblingResult(int stake,int goal,float times){
 		float wincount=0,losecount=0;
@@ -226,8 +226,8 @@ public class Utility {
 	
 	
 
-	/**CoupanNo  
-	 * @param distinctCoupan
+	/** This method is used to generate distinct coupans 
+	 * @param distinctCoupan No. of coupans user wants
 	 */
 	public static void coupanNoGenaerator(int distinctCoupan) {
 		int[] distinctCoupanArray=new int[distinctCoupan];
@@ -258,7 +258,11 @@ public class Utility {
 	System.out.println(distinctCoupanArray[j]);
 	}
 	
-	public static void get2DArrayInput(int M,int N ) {
+	/**This method is used to get input in two dimensional array and print elements of array 
+	 * @param M no. of Rows
+	 * @param N no. of Column
+	 */
+	public static int[][] get2DArrayInput(int M,int N ) {
 		
 		int[][] input2DArray=new int[M][N];
 		System.out.println("Now enter values");	
@@ -270,19 +274,13 @@ public class Utility {
 			}
 		}
 		
+		return input2DArray;
 	
-for(int i=0;i<M;i++) {
-			
-			for(int j=0;j<N;j++) {
-		 
-				System.out.print(input2DArray[i][j]+" ");
-			}
-			System.out.println("");
-		}
+
 	}
 	
-	/**10th program,this triplet code can have some problem ,i have to see again properly
-	 * @param numberRange
+	/**This method is used to get all possible triplet within given range
+	 * @param numberRange No. of values user wants to put
 	 */
 	public static void getTriplet(int numberRange) {
 		
@@ -316,9 +314,9 @@ totalCount++;
 }
 	
 	
-	/** EuclideanDistance
-	 * @param x
-	 * @param y
+	/**This method is used to get Euclidean distance for given X and Y coordinates 
+	 * @param x x-coordinate
+	 * @param y y-coordinate
 	 */
 	public static void getDistance(int x, int y) {
 		
@@ -327,6 +325,9 @@ totalCount++;
 		}
 	
 	
+	/** This method is used to get Elapsed time in Stopwatch
+	 * @param i  value given by user within specified Set of Values  
+	 */
 	public static void getElapsedTime(int i) {
 		long millisec1=0;
 		long millisec2=0;
@@ -347,10 +348,12 @@ totalCount++;
 	}
 	
 	
-	/**QuadraticEquation
-	 * @param a
-	 * @param b
-	 * @param c
+	/** This method is used to get roots of given Quadratic Equation
+	 * ax^2+bx+c=0
+	 * 
+	 * @param a coefficient of x^2
+	 * @param b coefficient of x
+	 * @param c contant
 	 */
 	public static void getRoots(int a,int b,int c) {
 		
@@ -362,10 +365,10 @@ totalCount++;
 	
 	
 	/**
-	 * WindChill program
+	 * This method is used to get Effective Temperature (WindChill ) 
 	 * 
-	 * @param t
-	 * @param v
+	 * @param t temperature
+	 * @param v velocity 
 	 */
 	public static void getWindChill(double t,double v) {
 	
@@ -386,9 +389,11 @@ totalCount++;
 	
 	
 	
-	/**
-	 * @param s1
-	 * @param s2
+	
+	/**This method is used to determine whether given 
+	 * two Strings are anagram of each other or not
+	 * @param s1  first String
+	 * @param s2  second String
 	 */
 	public static void isAnagram(String s1, String s2) {
 		String spaceS1 = "";
@@ -471,6 +476,9 @@ totalCount++;
 
 	}
 
+	/**This method is used to get all prime Numbers within 1000 Range
+	 * @return This method will return an Array containing all Prime Numbers
+	 */
 	public static int[] getPrime() {
 		int[] primeArray = new int[1000];
 		boolean isPrime = true;
@@ -494,6 +502,9 @@ totalCount++;
 		return primeArray;
 	}
 
+	/**
+	 * This method is used to get all Prime Numbers that are Palindrome
+	 */
 	public static void getPrimePalindrome() {
 
 		int[] storePrime = new int[1000];
@@ -540,7 +551,8 @@ totalCount++;
 
 	}
 
-	/**Prime No that are Anagram
+	/** 
+	 * This method is used to get All Prime numbers that are Anagram
 	 * 
 	 */
 	public static void getPrimeAnagram() {
