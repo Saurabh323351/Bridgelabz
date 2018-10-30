@@ -4,7 +4,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Utility {
-//creating object of Scanner class
+	// creating object of Scanner class
 	static Scanner sc = new Scanner(System.in);
 
 	/**
@@ -67,10 +67,13 @@ public class Utility {
 	/**
 	 * This method is used to replace Given String with the user String
 	 * 
-	 * @param string      Given Sentence or String
-	 * @param str         this variable will refer to that part of string of
-	 *                    sentence that we want to replace
-	 * @param replaceWith string given by user
+	 * @param string
+	 *            Given Sentence or String
+	 * @param str
+	 *            this variable will refer to that part of string of sentence that
+	 *            we want to replace
+	 * @param replaceWith
+	 *            string given by user
 	 * @return
 	 */
 	public static String replace(String string, String str, String replaceWith) {
@@ -83,7 +86,8 @@ public class Utility {
 	/**
 	 * This method is used to get percentage of head and tail in given no of turns
 	 * 
-	 * @param n No.of turns
+	 * @param n
+	 *            No.of turns
 	 */
 	public static void getProbability(int n) {
 
@@ -115,7 +119,8 @@ public class Utility {
 	/**
 	 * This method is used to determine whether given year is Leap or not
 	 * 
-	 * @param year year enter by user
+	 * @param year
+	 *            year enter by user
 	 */
 	public static void isLeepYear(int year) {
 
@@ -128,7 +133,7 @@ public class Utility {
 			count++;
 		}
 
-// comparing count value with 4 to ensure count have 4 digits		
+		// comparing count value with 4 to ensure count have 4 digits
 		if (count == 4) {
 
 			// Condition for Leap Year
@@ -150,7 +155,8 @@ public class Utility {
 	/**
 	 * This method is used to get all values of power of 2 within given range
 	 * 
-	 * @param limit range given by user
+	 * @param limit
+	 *            range given by user
 	 */
 	public static void power_2(int limit) {
 
@@ -167,7 +173,8 @@ public class Utility {
 	/**
 	 * This method is used to ensure that entered value is greater than zero
 	 * 
-	 * @param n value entered by user
+	 * @param n
+	 *            value entered by user
 	 * @return noCheck(n);
 	 */
 	public static int noCheck(int n) {
@@ -187,7 +194,8 @@ public class Utility {
 	/**
 	 * This method is used to get nth Harmonic value
 	 * 
-	 * @param n user value
+	 * @param n
+	 *            user value
 	 */
 	public static void nthHarmonicValue(int n) {
 		float sum = 0;
@@ -204,7 +212,8 @@ public class Utility {
 	/**
 	 * This method is used to get All Prime Factors of given Number
 	 * 
-	 * @param n user value
+	 * @param n
+	 *            user value
 	 */
 	public static void getPrimeFactor(int n) {
 		boolean isPrime = true;
@@ -250,7 +259,8 @@ public class Utility {
 	 * 
 	 * @param stake
 	 * @param goal
-	 * @param times no of times user wants to play
+	 * @param times
+	 *            no of times user wants to play
 	 */
 	public static void gamblingResult(int stake, int goal, float times) {
 		float wincount = 0, losecount = 0;
@@ -281,7 +291,8 @@ public class Utility {
 	/**
 	 * This method is used to generate distinct coupans
 	 * 
-	 * @param distinctCoupan No. of coupans user wants
+	 * @param distinctCoupan
+	 *            No. of coupans user wants
 	 */
 	public static void coupanNoGenaerator(int distinctCoupan) {
 		// Assigning array size as distinctCoupan i.e user value
@@ -346,8 +357,10 @@ public class Utility {
 	 * This method is used to get input in two dimensional array and print elements
 	 * of array
 	 * 
-	 * @param M no. of Rows
-	 * @param N no. of Column
+	 * @param M
+	 *            no. of Rows
+	 * @param N
+	 *            no. of Column
 	 */
 	public static int[][] get2DArrayInput(int M, int N) {
 
@@ -371,7 +384,8 @@ public class Utility {
 	/**
 	 * This method is used to get all possible triplet within given range
 	 * 
-	 * @param numberRange No. of values user wants to put
+	 * @param numberRange
+	 *            No. of values user wants to put
 	 */
 	public static void getTriplet(int numberRange) {
 		// To count total Triplet generated
@@ -422,8 +436,10 @@ public class Utility {
 	/**
 	 * This method is used to get Euclidean distance for given X and Y coordinates
 	 * 
-	 * @param x x-coordinate
-	 * @param y y-coordinate
+	 * @param x
+	 *            x-coordinate
+	 * @param y
+	 *            y-coordinate
 	 */
 	public static void getDistance(int x, int y) {
 
@@ -435,7 +451,8 @@ public class Utility {
 	/**
 	 * This method is used to get Elapsed time in StopWatch
 	 * 
-	 * @param i value given by user within specified Set of Values
+	 * @param i
+	 *            value given by user within specified Set of Values
 	 */
 	public static void getElapsedTime(int i) {
 		long millisec1 = 0;
@@ -461,9 +478,12 @@ public class Utility {
 	/**
 	 * This method is used to get roots of given Quadratic Equation ax^2+bx+c=0
 	 * 
-	 * @param a coefficient of x^2
-	 * @param b coefficient of x
-	 * @param c constant
+	 * @param a
+	 *            coefficient of x^2
+	 * @param b
+	 *            coefficient of x
+	 * @param c
+	 *            constant
 	 */
 	public static void getRoots(int a, int b, int c) {
 
@@ -479,8 +499,10 @@ public class Utility {
 	/**
 	 * This method is used to get Effective Temperature (WindChill )
 	 * 
-	 * @param t temperature
-	 * @param v velocity
+	 * @param t
+	 *            temperature
+	 * @param v
+	 *            velocity
 	 */
 	public static void getWindChill(double t, double v) {
 
@@ -505,8 +527,10 @@ public class Utility {
 	 * This method is used to determine whether given two Strings are anagram of
 	 * each other or not
 	 * 
-	 * @param s1 first String
-	 * @param s2 second String
+	 * @param s1
+	 *            first String
+	 * @param s2
+	 *            second String
 	 */
 	public static void isAnagram(String s1, String s2) {
 		String spaceS1 = "";
@@ -687,7 +711,7 @@ public class Utility {
 	public static void getPrimeAnagram() {
 
 		int count1 = 0;
-		
+
 		// initializing array using getPrime method of Utility class
 		int[] primeArray = Utility.getPrime();
 
@@ -696,36 +720,45 @@ public class Utility {
 			if (primeArray[i] != 0)
 				count1++;
 		}
-		//creating array with count1 length
+		// creating array with count1 length
 		int[] x = new int[count1];
 
-		//initializing integer array with non-zero elements of primeArray
+		// initializing integer array with non-zero elements of primeArray
 		for (int i = 0; i < x.length; i++) {
 			if (primeArray[i] != 0)
 				x[i] = primeArray[i];
 		}
 
-		
-// creating string array with integer array length 
-		String[] sAray = new String[x.length]; 
+		// creating string array with integer array length
+		String[] sAray = new String[x.length];
 		String[] compareAray = new String[x.length];
 		for (int i = 0; i < x.length; i++) {
 
+			// converting each integer elements into string and storing to string array
 			sAray[i] = Integer.toString(x[i]);
 		}
 		int i = 0, j = 0, count = 0;
 		String s3 = "";
 
+		// Assigning array value to string s1
 		for (int m = 0; m < sAray.length; m++) {
 			String s1 = sAray[m];
 
+			// creating character array with the size of s1.length
 			char[] ch2 = new char[s1.length()];
+
+			/**
+			 * Splitting each character of string s1 using chatAt() and storing into ch2
+			 * array
+			 */
 
 			for (i = 0; i < s1.length(); i++) {
 
 				char ch = s1.charAt(i);
 				ch2[i] = ch;
 			}
+			
+			// Sorting characters of char array using bubble sort
 			for (j = 0; j < ch2.length; j++) {
 				for (int k = j + 1; k < ch2.length; k++) {
 
@@ -739,6 +772,7 @@ public class Utility {
 				}
 			}
 			s1 = "";
+			// concatenating sorted characters of a char array to String s1
 			for (i = 0; i < ch2.length; i++)
 				s1 = s1 + ch2[i];
 
@@ -751,6 +785,13 @@ public class Utility {
 
 			count = 0;
 			for (int q = p + 1; q < compareAray.length; q++) {
+				
+				/**
+				 *  Here we are comparing sorted Strings that are stored in compareAray 
+				 *  & but we are printing the actual integer values 
+				 *  that are present in place of those sorted strings
+				 *  and we have stored those actual integer values in x array
+				 */
 				if (compareAray[p].equals(compareAray[q]) & (compareAray[p].equals("")) == false) {
 
 					System.out.println(x[q]);
@@ -759,6 +800,7 @@ public class Utility {
 
 				}
 			}
+			// printing the values from which we are comparing i.e x[p]
 			if (count > 0) {
 				System.out.println(x[p]);
 			}
