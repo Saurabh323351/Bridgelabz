@@ -1,4 +1,4 @@
-package bridgelabz.programs.functional;
+/*package bridgelabz.programs.functional;
 
 public class Main_1 {
 
@@ -7,4 +7,4 @@ public class Main_1 {
 		StringUserInput_1.replaceString();
 	}
 
-}
+}*/

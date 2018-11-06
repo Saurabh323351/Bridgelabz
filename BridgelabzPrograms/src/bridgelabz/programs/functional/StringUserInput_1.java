@@ -1,19 +1,19 @@
 package bridgelabz.programs.functional;
-import java.util.Scanner;
 
+import com.bridgelaz.utiltiy.*;
 public class StringUserInput_1 {
-	
-static	String s="Hello <<UserName>>, How are you?";
-	
-	public static void replaceString() {
-		System.out.println("Enter Your String");
-		Scanner sc=new Scanner(System.in);
-		String userstring=sc.nextLine();
-		sc.close();
-		String replacestr=s.replace("<<UserName>>",userstring);
-		System.out.println(replacestr);  
+	public static void main(String arg[]) {
+		Utility utility =new Utility();
+		
+		//Intilizing variables
+		String template = "Hello <<UserName>>, How are you?";
+		System.out.println(" Please Enter the String");
+		String name=utility.inputString();
+		
+		//Method is used replace a string
+		String output=utility.replace(template,name);
+		System.out.println(output);
 	}
-
 }
 
 
