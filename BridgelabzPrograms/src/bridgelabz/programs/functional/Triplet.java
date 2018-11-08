@@ -1,34 +1,45 @@
 package bridgelabz.programs.functional;
-
+import java.util.Scanner;
 public class Triplet {
 
-	public static void getTriplet() {
+	public static void getTriplet(int numberRange) {
 		
-		int numberRange=7;
-		int[] userNumber={1,-2,1,3,-2,-1};int k=0;
+		int count=0,totalCount=0; 
+		int[] userNumber=new int[numberRange];
+		System.out.println("Enter values");
+		Scanner sc=new Scanner(System.in);
+		for(int i=0;i<numberRange;i++)
+			userNumber[i]=sc.nextInt();
+		
+		int k=0,add=0,jthValue=0;
 		 int[] tripletStore=new int[userNumber.length]; 
 		for(int i=0;i<userNumber.length;i++) {
 			
 			for(int j=i+1;j<userNumber.length;j++) {
 				 
+				if(i==count) {
+					add=userNumber[i]+userNumber[j];
+					 jthValue=userNumber[j];
+					count++;
+				}
+				
 				if(j+1<userNumber.length) {
-				if(userNumber[i]+userNumber[j]+userNumber[j+1]==0) {
-				tripletStore[k++]=userNumber[i];
-				tripletStore[k++]=userNumber[j];
-				tripletStore[k++]=userNumber[j+1];
+				if(add+userNumber[j+1]==0) {
+System.out.println(userNumber[i]+" "+jthValue+" "+userNumber[j+1]);
+System.out.println("--------");
+totalCount++;
 				}
 				}
 			}
+			
 		}
-	
-	for(int i=0;i<tripletStore.length;i++)
-		System.out.println(tripletStore[i]);
-		
-		
-	}
+	System.out.println("Total triplet Possible => "+totalCount);	
+}
 	
 	public static void main(String[] args) {
-		Triplet.getTriplet();
+		System.out.println("Enter Number of values u want to put ");
+		int n=new Scanner(System.in).nextInt();
+		Triplet.getTriplet(n);
 
 	}
 
