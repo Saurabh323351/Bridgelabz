@@ -1,17 +1,17 @@
 package bridgelabz.programs.functional;
-import java.util.Scanner;
+
+import com.bridgelab.utility.Utility;
 public class QuadraticMain {
 
 	public static void main(String[] args) {
 // ax^2+bX+c=0(quadratic Equation)
 		
 		System.out.println("Enter the Coefficient of the Quadratic Equation");
-  Scanner sc=new Scanner(System.in);	
-		int a=sc.nextInt();
-		int b=sc.nextInt();	
-		int c=sc.nextInt();
+		int a=Utility.getInt();
+		int b=Utility.getInt();	
+		int c=Utility.getInt();
 		
-	QuadraticEquation.getRoots(a, b, c); 	
+	Utility.getRoots(a, b, c); 	
 		
 	}
 

@@ -1,20 +1,17 @@
 package bridgelabz.programs.functional;
+import com.bridgelab.utility.Utility;
 
-import java.util.Scanner;
-
-//import javax.swing.plaf.synth.SynthSeparatorUI;
 
 public class GamblingMain {
 
 	public static void main(String[] args) {
-        Scanner sc=new Scanner(System.in);
 		System.out.println("Enter your Stake");
-		int a=sc.nextInt();
+		int a=Utility.getInt();
 		System.out.println("Enter your Goal");
-		int b=sc.nextInt();
+		int b=Utility.getInt();
 		System.out.println("Enter no of Times you want to play");
-		float c=sc.nextInt();
-		GamblingLogic.gamblingResult(a, b, c);
+		float c=Utility.getInt();
+		Utility.gamblingResult(a, b, c);
 		
 	}
 

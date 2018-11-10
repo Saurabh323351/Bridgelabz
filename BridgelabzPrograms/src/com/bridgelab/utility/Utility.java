@@ -1,34 +1,19 @@
 package com.bridgelab.utility;
 
+import java.util.Random;
 import java.util.Scanner;
 
+/**
+ * @author bridgeit
+ *
+ */
+/**
+ * @author bridgeit
+ *
+ */
 public class Utility {
 
 	static Scanner sc = new Scanner(System.in);
-	/*
-	*//**
-		 * This method is used to input as a string
-		 * 
-		 * @return
-		 */
-
-	/*
-	 * public String inputString() { Scanner scanner =new Scanner(System.in); String
-	 * demo=scanner.next(); return null; }
-	 * 
-	 * 
-	 *//**
-		 * This method is used to replace the string given input provided by the user.
-		 * 
-		 * @param template String is predefined
-		 * @param name
-		 * @return
-		 *//*
-			 * public String replace(String template ,String name) {
-			 * 
-			 * String output=template.replace("<<UserName>>",name);
-			 * System.out.println(output); return output; }
-			 */
 
 	public static int getInt() {
 
@@ -51,6 +36,265 @@ public class Utility {
 
 	}
 
+	public static String replace(String string, String str, String replaceWith) {
+
+		String ansString = string.replace(str, replaceWith);
+		return ansString;
+	}
+
+	public static void getProbability(int n) {
+
+		Random r = new Random();
+		float heads = 0;
+		for (int i = 1; i <= n; i++) {
+			int side = r.nextInt(2);// it generates random value less than 2
+
+			if (side == 1) {
+				heads++;
+			}
+		}
+		float headpercet = heads / n * 100;
+
+		float tailpercent = 100 - headpercet;
+		System.out.println("Percentage of head :" + headpercet);
+		System.out.println("Percentage of tail :" + tailpercent);
+
+	}
+
+	
+	
+	/**
+	 * @param year
+	 */
+	public static void isLeepYear(int year) {
+
+		int count = 0, q = year, r = 0;
+		while (q > 0) {
+			r = q % 10;
+			q = q / 10;
+			count++;
+		}
+
+		if (count == 4) {
+
+			if (year % 100 == 0 && year % 400 == 0)
+				System.out.println(year + " is a Leap year");
+			else
+				System.out.println(year + " in not a leap year");
+		}
+
+		else {
+			System.out.println("Year must have four digit ,So Enter 4 digit");
+			year = getInt();
+			isLeepYear(year);
+		}
+	}
+
+	/**here we can know powers of 2
+	 * @param limit
+	 */
+	public static void power_2(int limit){
+		   
+		for(int i=0;i<=limit;i++) {
+			int value =(int)Math.pow(2, i);
+			
+			System.out.println(value);}
+	}
+	
+	
+	
+	/** HarmonicNo program
+	 * @param n
+	 * @return
+	 */
+	public static int noCheck(int n) {
+		if(n<=0) {
+			System.out.println("enter value greater than 0 ");
+			n=new Scanner(System.in).nextInt();
+		}
+		
+		if(n>0)
+		return n;
+		
+		return noCheck(n);
+	}
+	
+	
+	public static void nthHarmonicValue(int n) {
+		float sum=0;
+		for(float i=1;i<=n;i++) {
+		sum+=1/i; 	
+		}
+		System.out.println("Nth Harmonic value "+sum);
+	}
+	 
+	
+	
+	
+	/**Prime Factorization
+	 * @param n
+	 */
+	public static void getPrimeFactor(int n) {
+		boolean isPrime=true;
+		//int n=147;
+		int N=n;
+		
+			
+			
+			for(int i=2;i<=n;i++){
+           isPrime=true;
+           for(int j=2;j<=Math.sqrt(i);j++)
+				if(n%j==0) {
+					isPrime=false;
+					 }
+				
+			
+			if(isPrime) {
+				N=n;
+				while(N%i==0) {
+					N=N/i;
+				System.out.println(i);}
+			}
+			}	
+	}
+		
+	
+	
+	/** Gambling Program
+	 * @param stake
+	 * @param goal
+	 * @param times
+	 */
+	public static void gamblingResult(int stake,int goal,float times){
+		float wincount=0,losecount=0;
+		Random r= new Random();
+		for(int i=1;i<=times;i++) {
+			
+			int j=r.nextInt(2);
+			
+			if(j==1)
+				wincount++;
+			else
+				losecount++;
+				
+		}
+	int	wincountcasting=(int)wincount;
+		System.out.println("No of times wins =>"+wincountcasting);
+		
+		System.out.println("win Percentage =>"+(wincount/times)*100+" "+"Lose Percentage "+(losecount/times)*100);
+		
+		
+		
+	}
+	
+	
+	
+
+	/**CoupanNo  
+	 * @param distinctCoupan
+	 */
+	public static void coupanNoGenaerator(int distinctCoupan) {
+		int[] distinctCoupanArray=new int[distinctCoupan];
+		boolean isDistinct=true;int randomNoCount=0;int coupanCount=0,k=0;
+		Random r=new Random();
+	while(coupanCount<distinctCoupan){
+		isDistinct=true;
+		int randomNo=r.nextInt();
+		randomNoCount++;
+		
+		for(int i=0;i<distinctCoupanArray.length;i++) {
+			
+			if(randomNo==distinctCoupanArray[i]|| randomNo<0 )
+				isDistinct=false;
+		}
+		
+		if(isDistinct) {
+			if(k<distinctCoupanArray.length)
+			distinctCoupanArray[k++]=randomNo;
+			coupanCount++;
+			}
+			
+	
+	}
+	System.out.println("Random Number Needed to get Required Distinct Coupans => "+randomNoCount);
+	System.out.println("These are the Distinct Coupans");
+	for(int j=0;j<distinctCoupanArray.length;j++)
+	System.out.println(distinctCoupanArray[j]);
+	}
+	
+	
+	/**10th program,this triplet code can have some problem ,i have to see again properly
+	 * @param numberRange
+	 */
+	public static void getTriplet(int numberRange) {
+		
+		int count=0,totalCount=0; 
+		int[] userNumber=new int[numberRange];
+		System.out.println("Enter values");
+		Scanner sc=new Scanner(System.in);
+		for(int i=0;i<numberRange;i++)
+			userNumber[i]=sc.nextInt();
+		
+		int k=0,add=0,jthValue=0;
+		 int[] tripletStore=new int[userNumber.length]; 
+		for(int i=0;i<userNumber.length;i++) {
+			
+			for(int j=i+1;j<userNumber.length;j++) {
+				 
+				if(i==count) {
+					add=userNumber[i]+userNumber[j];
+					 jthValue=userNumber[j];
+					count++;
+				}
+				
+				if(j+1<userNumber.length) {
+				if(add+userNumber[j+1]==0) {
+System.out.println(userNumber[i]+" "+jthValue+" "+userNumber[j+1]);
+System.out.println("--------");
+totalCount++;
+				}
+				}
+			}
+			
+		}
+	System.out.println("Total triplet Possible => "+totalCount);	
+}
+	
+	
+	/** EuclideanDistance
+	 * @param x
+	 * @param y
+	 */
+	public static void getDistance(int x, int y) {
+		
+		  double EuclideanDistance=Math.sqrt(x*x+y*y);
+		  System.out.println("Your Euclidean Distance is => "+EuclideanDistance);
+		}
+	
+	
+	/**QuadraticEquation
+	 * @param a
+	 * @param b
+	 * @param c
+	 */
+	public static void getRoots(int a,int b,int c) {
+		
+		int delta=((b*b)-(4*a*c));
+			double firstRoot=(-b+Math.sqrt(delta))/2*a;
+			double secondRoot=(-b-Math.sqrt(delta))/2*a;
+		System.out.println("First Root of x = "+firstRoot+" Second Root of x ="+secondRoot);
+		}
+	
+	
+	
+	
+	
+	
+	
+	/**
+	 * @param s1
+	 * @param s2
+	 */
 	public static void isAnagram(String s1, String s2) {
 		String spaceS1 = "";
 		String spaceS2 = "";
@@ -191,14 +435,12 @@ public class Utility {
 
 		for (int i = 0; i < storePalindrome.length; i++) {
 			/*
-			 * if (storePalindrome[i] > 0) 
-			 * System.out.println(storePalindrome[i]);
+			 * if (storePalindrome[i] > 0) System.out.println(storePalindrome[i]);
 			 */
 
 		}
 
 		for (int i = 0; i < sortedPrime.length; i++) {
-
 			int primeNo = storePrime[i];
 			int arraySize = 0;
 			int sum = 0;
@@ -230,34 +472,49 @@ public class Utility {
 				}
 			}
 
-			
+			int countZeros = 0;
 			int sortedNo = 0;
-			for (int j = 0; j < pSeparation.length; j++)
+			for (int j = 0; j < pSeparation.length; j++) {
+				countZeros = 0;
+				if (pSeparation[j] == 0)
+					countZeros++;
+
 				sortedNo = sortedNo * 10 + pSeparation[j];
-			
+				System.out.println(sortedNo);
+				if (countZeros > 0) {
 
-			sortedPrime[index++] = sortedNo;
+					String leftPadding = String.format("%03d", sortedNo);
 
+					// System.out.println(leftPadding);
+					// sortedNo=Integer.parseInt(leftPadding);
+					System.out.println(sortedNo);
+					continue;
+				}
+
+				sortedPrime[index++] = sortedNo;
+
+			}
+
+			/*
+			 * for (int j = 0; j < sortedPrime.length; j++) { if(sortedPrime[j]>0)
+			 * System.out.println(sortedPrime[j]);
+			 * 
+			 * }
+			 */
+			/*
+			 * int n=11; String leftPadding=String.format("%03d", n);
+			 * System.out.println(leftPadding);
+			 */
+			int count4 = 0;
+
+			/*
+			 * for (int j = 0; j < sortedPrime.length-1; j++) { count4=0; for (int k = j +
+			 * 1; k < sortedPrime.length; k++) { if ((sortedPrime[j]==sortedPrime[k]) && (j
+			 * != k) && sortedPrime[j]!=0 && storePrime[j]!=0 && storePrime[k]!=0) {
+			 * System.out.println(" " +storePrime[k]); count4++; } } if(count4>=1)
+			 * System.out.println(""+storePrime[j]); }
+			 */
 		}
 
-		/*for (int j = 0; j < sortedPrime.length; j++)
-			System.out.println(storePrime[j]);
-	*/
-	
-int count4=0;
-		
-for (int j = 0; j < sortedPrime.length-1; j++) {
-			count4=0;
-			for (int k = j + 1; k < sortedPrime.length; k++) {
-if ((sortedPrime[j]==sortedPrime[k]) && (j != k) && sortedPrime[j]!=0 ) {
-					System.out.println(storePrime[j]+" " +storePrime[k]);
-					count4++;
-				}
-			}
-		/*if(count4>=1)
-			System.out.println(storePrime[j]);	
-		*/}
-
 	}
-
 }

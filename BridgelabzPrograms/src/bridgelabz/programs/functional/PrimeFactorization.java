@@ -1,34 +1,13 @@
 package bridgelabz.programs.functional;
+import com.bridgelab.utility.Utility;
 
-public class PrimeFactorization {
+public class PrimeFactorization{
 
-	public static void getPrimeFactor(int n) {
-		boolean isPrime=true;
-		//int n=147;
-		int N=n;
-		
-			
-			
-			for(int i=2;i<=n;i++){
-           isPrime=true;
-           for(int j=2;j<=Math.sqrt(i);j++)
-				if(n%j==0) {
-					isPrime=false;
-					 }
-				
-			
-			if(isPrime) {
-				N=n;
-				while(N%i==0) {
-					N=N/i;
-				System.out.println(i);}
-			}
-			}	
-	}
-			
-			
-		
-
+	public static void main(String[] args) {
+    
+	System.out.println("Enter value to see all Prime Factor");
+	int num=Utility.getInt();
+	Utility.getPrimeFactor(num);
 	}
 
-
+}

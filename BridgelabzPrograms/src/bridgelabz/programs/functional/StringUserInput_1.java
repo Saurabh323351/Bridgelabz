@@ -1,20 +1,35 @@
-package bridgelabz.programs.functional;
+/******************************************************************************
+ *  Compilation:  javac -d bin StringUserInput_1.java
+ *  Execution:    java -cp bin  bridgelabz.programs.functional.StringUserInput_1
+ *  
+ *  Purpose: To replace user string with given string.
+ *
+ *  @author  BridgeLabz
+ *  @version 1.0
+ *  @since   10-11-2018
+ *
+ ******************************************************************************/
 
-import com.bridgelaz.utiltiy.*;
+package bridgelabz.programs.functional;
+import com.bridgelab.utility.Utility;
+
 public class StringUserInput_1 {
 	public static void main(String arg[]) {
-		Utility utility =new Utility();
+	
 		
-		//Intilizing variables
+		// initializing variables
 		String template = "Hello <<UserName>>, How are you?";
+		//taking input from user
 		System.out.println(" Please Enter the String");
-		String name=utility.inputString();
+		String name=Utility.getString();
 		
-		//Method is used replace a string
-		String output=utility.replace(template,name);
+		//this method is used to replace a string
+		String output=Utility.replace(template,"<<UserName>>",name);
 		System.out.println(output);
 	}
 }
+
+
 
 
 

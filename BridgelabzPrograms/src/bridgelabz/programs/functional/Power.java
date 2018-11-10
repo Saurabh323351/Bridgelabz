@@ -1,13 +1,16 @@
 package bridgelabz.programs.functional;
 
-public class Power {
+import com.bridgelab.utility.Utility;
 
-public static void power_2(int limit){
-   
-	for(int i=0;i<=limit;i++) {
-		int value =(int)Math.pow(2, i);
-		
-		System.out.println(value);}
+public class Power
+{
+	static int N;
+
+	public static void main(String[] args) {
+		System.out.println("Enter range through command prompt");
+		N = Integer.parseInt(args[0]);
+		Utility.power_2(N);
+
+	}
+
 }
-}
- 
