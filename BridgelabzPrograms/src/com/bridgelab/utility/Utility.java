@@ -222,6 +222,28 @@ public class Utility {
 	System.out.println(distinctCoupanArray[j]);
 	}
 	
+	public static void get2DArrayInput(int M,int N ) {
+		
+		int[][] input2DArray=new int[M][N];
+		System.out.println("Now enter values");	
+		for(int i=0;i<M;i++) {
+			
+			for(int j=0;j<N;j++) {
+				
+				input2DArray[i][j]=getInt();
+			}
+		}
+		
+	
+for(int i=0;i<M;i++) {
+			
+			for(int j=0;j<N;j++) {
+		 
+				System.out.print(input2DArray[i][j]+" ");
+			}
+			System.out.println("");
+		}
+	}
 	
 	/**10th program,this triplet code can have some problem ,i have to see again properly
 	 * @param numberRange
@@ -270,6 +292,26 @@ totalCount++;
 		  double EuclideanDistance=Math.sqrt(x*x+y*y);
 		  System.out.println("Your Euclidean Distance is => "+EuclideanDistance);
 		}
+	
+	
+	public static void getElapsedTime(int i) {
+		long millisec1=0;
+		long millisec2=0;
+		if(i==1) {
+			System.out.println("Started");
+			millisec1=System.currentTimeMillis();
+			}
+		i=getInt();
+		if(i==2) {
+			System.out.println("Stopped");
+			millisec2=System.currentTimeMillis();
+		System.out.println("Elapsed Time is "+(millisec2- millisec1)/1000+" sec");
+		
+	
+		}
+
+		
+	}
 	
 	
 	/**QuadraticEquation
@@ -431,90 +473,39 @@ totalCount++;
 					storePalindrome[count1++] = i;
 			}
 		}
-		// System.out.println("Prime Numbers that are Palindrome are as follows");
+		 System.out.println("Prime Numbers that are Palindrome are as follows");
 
 		for (int i = 0; i < storePalindrome.length; i++) {
-			/*
-			 * if (storePalindrome[i] > 0) System.out.println(storePalindrome[i]);
-			 */
+			
+			  if (storePalindrome[i] > 0) { 
+				 // System.out.println(storePalindrome[i]);
+			  }
 
 		}
 
-		for (int i = 0; i < sortedPrime.length; i++) {
-			int primeNo = storePrime[i];
-			int arraySize = 0;
-			int sum = 0;
-			int count3 = 0;
-			while (primeNo > 0) {
-				primeNo = primeNo / 10;
-				arraySize++;
-			}
-			primeNo = storePrime[i];
-			int[] pSeparation = new int[arraySize];
-			while (primeNo > 0) {
-
-				int r = primeNo % 10;
-				primeNo = primeNo / 10;
-				pSeparation[count3++] = r;
-
+		for (int i = 0; i < storePrime.length; i++) {
+			String primeNo = "";
+			primeNo=storePrime[i]+"";
+			//System.out.println(primeNo);
+			
+			
+			char[] storeCharS1 = new char[5];
+			char[] storeCharS2 = new char[5];
+/*
+			for (int i = 0; i < storeCharS1.length; i++) {
+				char ch = primeNo.charAt(i);
+				storeCharS1[i] = ch;
 			}
 
-			for (int j = 0; j < pSeparation.length; j++) {
-
-				for (int k = j + 1; k < pSeparation.length; k++) {
-
-					if (pSeparation[j] > pSeparation[k]) {
-
-						int temp = pSeparation[j];
-						pSeparation[j] = pSeparation[k];
-						pSeparation[k] = temp;
-					}
-				}
+			for (int i = 0; i < storeCharS2.length; i++) {
+				char ch = primeNo.charAt(i);
+				storeCharS2[i] = ch;
 			}
 
-			int countZeros = 0;
-			int sortedNo = 0;
-			for (int j = 0; j < pSeparation.length; j++) {
-				countZeros = 0;
-				if (pSeparation[j] == 0)
-					countZeros++;
 
-				sortedNo = sortedNo * 10 + pSeparation[j];
-				System.out.println(sortedNo);
-				if (countZeros > 0) {
-
-					String leftPadding = String.format("%03d", sortedNo);
-
-					// System.out.println(leftPadding);
-					// sortedNo=Integer.parseInt(leftPadding);
-					System.out.println(sortedNo);
-					continue;
-				}
-
-				sortedPrime[index++] = sortedNo;
-
+	}*/
+	
 			}
-
-			/*
-			 * for (int j = 0; j < sortedPrime.length; j++) { if(sortedPrime[j]>0)
-			 * System.out.println(sortedPrime[j]);
-			 * 
-			 * }
-			 */
-			/*
-			 * int n=11; String leftPadding=String.format("%03d", n);
-			 * System.out.println(leftPadding);
-			 */
-			int count4 = 0;
-
-			/*
-			 * for (int j = 0; j < sortedPrime.length-1; j++) { count4=0; for (int k = j +
-			 * 1; k < sortedPrime.length; k++) { if ((sortedPrime[j]==sortedPrime[k]) && (j
-			 * != k) && sortedPrime[j]!=0 && storePrime[j]!=0 && storePrime[k]!=0) {
-			 * System.out.println(" " +storePrime[k]); count4++; } } if(count4>=1)
-			 * System.out.println(""+storePrime[j]); }
-			 */
-		}
-
 	}
 }
+
