@@ -1,18 +1,34 @@
+/******************************************************************************
+ *  Purpose:To Find percentage of Win and Loss.
+ *
+ *  @author  Saurabh
+ *  @version 1.0
+ *  @since   13-11-2018
+ *
+ ******************************************************************************/
+
 package bridgelabz.programs.functional;
+
 import com.bridgelab.utility.Utility;
 
-
-public class Gambling{
+public class Gambling {
 
 	public static void main(String[] args) {
 		System.out.println("Enter your Stake");
-		int a=Utility.getInt();
+		// Taking value of stake from user
+		int a = Utility.getInt();
 		System.out.println("Enter your Goal");
-		int b=Utility.getInt();
+
+		// Taking value of goal from user
+		int b = Utility.getInt();
 		System.out.println("Enter no of Times you want to play");
-		float c=Utility.getInt();
+
+		// Taking value for no. of turns from the user
+		float c = Utility.getInt();
+
+		// calling method of Utility class
 		Utility.gamblingResult(a, b, c);
-		
+
 	}
 
 }

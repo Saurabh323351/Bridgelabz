@@ -4,9 +4,13 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Utility {
-
+//creating object of Scanner class
 	static Scanner sc = new Scanner(System.in);
 
+	
+	/**This method is used to take integer input from user
+	 * @return integer value
+	 */
 	public static int getInt() {
 
 		int integer = sc.nextInt();
@@ -14,6 +18,9 @@ public class Utility {
 
 	}
 
+	/**This method is used to take long input from user
+	 * @return long value
+	 */
 	public static long getLong() {
 
 		long longValue = sc.nextLong();
@@ -21,17 +28,26 @@ public class Utility {
 
 	}
 	
+	/**This method is used to take double input from user
+	 * @return double value
+	 */
 	public static double getDouble() {
 		
 		double doubleValue=sc.nextDouble();
 		return doubleValue;
 	}
 
+	/**This method is used to take float input from user
+	 * @return float value
+	 */
 	public static float getFloat() {
  		float floatValue = sc.nextFloat();
 		return floatValue;
  	}
 	
+	/**This method is used to take String input from user
+	 * @return String 
+	 */
 	public static String getString() {
 
 		String string = sc.nextLine();
@@ -39,12 +55,23 @@ public class Utility {
 
 	}
 
+	/**This method is used to replace Given String with the user
+	 *  String
+	 * @param string  Given Sentence or String
+	 * @param str     this variable will refer to that part of string of sentence that we  want to replace
+	 * @param replaceWith  string given by user
+	 * @return
+	 */
 	public static String replace(String string, String str, String replaceWith) {
 
 		String ansString = string.replace(str, replaceWith);
 		return ansString;
 	}
 
+	/**This method is used to get percentage of head and tail 
+	 * in given no of turns
+	 * @param n No.of turns
+  	 */
 	public static void getProbability(int n) {
 
 		Random r = new Random();
@@ -66,8 +93,9 @@ public class Utility {
 
 	
 	
-	/**
-	 * @param year
+	/**This method is used to determine whether 
+	 * given year is Leap or not
+	 * @param year year enter by user
 	 */
 	public static void isLeepYear(int year) {
 
@@ -93,8 +121,9 @@ public class Utility {
 		}
 	}
 
-	/**here we can know powers of 2
-	 * @param limit
+	/**This method is used to get all values of power of 2 
+	 * within given range
+	 * @param limit range given by user 
 	 */
 	public static void power_2(int limit){
 		   
@@ -106,9 +135,10 @@ public class Utility {
 	
 	
 	
-	/** HarmonicNo program
-	 * @param n
-	 * @return
+	/** This method is used to ensure 
+	 * that entered value is greater than zero
+	 * @param n value entered by user
+	 * @return noCheck(n);
 	 */
 	public static int noCheck(int n) {
 		if(n<=0) {
@@ -123,6 +153,9 @@ public class Utility {
 	}
 	
 	
+	/**This method is used to get nth Harmonic value 
+	 * @param n
+	 */
 	public static void nthHarmonicValue(int n) {
 		float sum=0;
 		for(float i=1;i<=n;i++) {
@@ -253,7 +286,7 @@ for(int i=0;i<M;i++) {
 	 */
 	public static void getTriplet(int numberRange) {
 		
-		int count=0,totalCount=0; 
+		int totalCount=0; 
 		int[] userNumber=new int[numberRange];
 		System.out.println("Enter values");
 		for(int i=0;i<numberRange;i++)
@@ -264,12 +297,11 @@ for(int i=0;i<M;i++) {
 			
 			for(int j=i+1;j<userNumber.length;j++) {
 				 
-				if(i==count) {
+				
 					add=userNumber[i]+userNumber[j];
 					 jthValue=userNumber[j];
-					count++;
-				}
-				
+					
+								
 				if(j+1<userNumber.length) {
 				if(add+userNumber[j+1]==0) {
 System.out.println(userNumber[i]+" "+jthValue+" "+userNumber[j+1]);
