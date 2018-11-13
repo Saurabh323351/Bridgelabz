@@ -6,7 +6,8 @@ public class PrimePalindromeAnagram {
 
 	public static void main(String[] args) {
 
-		Utility.getPrimePalindromeAnagram();
+		Utility.getPrimePalindrome();
+		Utility.getPrimeAnagram();
 	}
 
 }

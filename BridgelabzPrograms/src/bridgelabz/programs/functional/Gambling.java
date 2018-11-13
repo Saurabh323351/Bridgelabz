@@ -2,7 +2,7 @@ package bridgelabz.programs.functional;
 import com.bridgelab.utility.Utility;
 
 
-public class GamblingMain {
+public class Gambling{
 
 	public static void main(String[] args) {
 		System.out.println("Enter your Stake");

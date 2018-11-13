@@ -13,7 +13,7 @@
 package bridgelabz.programs.functional;
 import com.bridgelab.utility.Utility;
 
-public class StringUserInput_1 {
+public class StringUserInput {
 	public static void main(String arg[]) {
 	
 		

@@ -3,14 +3,6 @@ package com.bridgelab.utility;
 import java.util.Random;
 import java.util.Scanner;
 
-/**
- * @author bridgeit
- *
- */
-/**
- * @author bridgeit
- *
- */
 public class Utility {
 
 	static Scanner sc = new Scanner(System.in);
@@ -28,7 +20,18 @@ public class Utility {
 		return longValue;
 
 	}
+	
+	public static double getDouble() {
+		
+		double doubleValue=sc.nextDouble();
+		return doubleValue;
+	}
 
+	public static float getFloat() {
+ 		float floatValue = sc.nextFloat();
+		return floatValue;
+ 	}
+	
 	public static String getString() {
 
 		String string = sc.nextLine();
@@ -253,12 +256,10 @@ for(int i=0;i<M;i++) {
 		int count=0,totalCount=0; 
 		int[] userNumber=new int[numberRange];
 		System.out.println("Enter values");
-		Scanner sc=new Scanner(System.in);
 		for(int i=0;i<numberRange;i++)
-			userNumber[i]=sc.nextInt();
+			userNumber[i]=getInt();
 		
-		int k=0,add=0,jthValue=0;
-		 int[] tripletStore=new int[userNumber.length]; 
+		int add=0,jthValue=0;
 		for(int i=0;i<userNumber.length;i++) {
 			
 			for(int j=i+1;j<userNumber.length;j++) {
@@ -328,7 +329,27 @@ totalCount++;
 		}
 	
 	
+	/**
+	 * WindChill program
+	 * 
+	 * @param t
+	 * @param v
+	 */
+	public static void getWindChill(double t,double v) {
 	
+	if(t>50 ||(v<3 || v>120 )) {
+		System.out.println("enter temperature value <=50 & Velocity >3 & <=120"); 
+		t=getDouble();
+		v=getDouble();
+		if(t>50 ||(v<3 || v>120 ))
+		getWindChill(t, v);
+	}
+	
+	if(t<=50 &&(v>=3 || v<=120 )) {
+	
+	double windChill=35.74+0.6215*t+(.4275*t-35.75)*Math.pow(v,0.16);
+	System.out.println(windChill);}
+	}
 	
 	
 	
@@ -418,32 +439,10 @@ totalCount++;
 
 	}
 
-	public static void getPrime() {
+	public static int[] getPrime() {
+		int[] primeArray = new int[1000];
 		boolean isPrime = true;
-		for (int i = 0; i <= 1000; i++) {
-			if (i == 0 || i == 1)
-				continue;
-
-			isPrime = true;
-			for (int j = 2; j <= Math.sqrt(i); j++) {
-
-				if (i % j == 0)
-					isPrime = false;
-			}
-
-			if (isPrime)
-				System.out.println(i);
-		}
-	}
-
-	public static void getPrimePalindromeAnagram() {
-
-		int[] storePrime = new int[1000];
-		int count = 0, count1 = 0, count2 = 0;
-		int index = 0;
-		int[] storePalindrome = new int[1000];
-		int[] sortedPrime = new int[1000];
-		boolean isPrime = true;
+		int count = 0;
 		for (int i = 0; i <= 1000; i++) {
 			if (i == 0 || i == 1)
 				continue;
@@ -456,9 +455,34 @@ totalCount++;
 			}
 
 			if (isPrime) {
-				// System.out.println(i);
+				//System.out.println(i);
+				primeArray[count++] = i;
+			}
+		}
+		return primeArray;
+	}
+
+	public static void getPrimePalindrome() {
+
+		int[] storePrime = new int[1000];
+		int[] storePalindrome = new int[1000];
+		boolean isPrime = true;
+		int count = 0, count1 = 0;
+		for (int i = 0; i <= 1000; i++) {
+			if (i == 0 || i == 1)
+				continue;
+
+			isPrime = true;
+			for (int j = 2; j <= Math.sqrt(i); j++) {
+
+				if (i % j == 0)
+					isPrime = false;
+			}
+
+			if (isPrime) {
+				
 				storePrime[count++] = i;
-				sortedPrime[count2++] = i;
+
 			}
 
 			if (isPrime) {
@@ -473,39 +497,112 @@ totalCount++;
 					storePalindrome[count1++] = i;
 			}
 		}
-		 System.out.println("Prime Numbers that are Palindrome are as follows");
+		System.out.println("Prime Numbers that are Palindrome are as follows");
 
 		for (int i = 0; i < storePalindrome.length; i++) {
-			
-			  if (storePalindrome[i] > 0) { 
-				 // System.out.println(storePalindrome[i]);
-			  }
+
+			if (storePalindrome[i] > 0)
+				System.out.println(storePalindrome[i]);
 
 		}
 
-		for (int i = 0; i < storePrime.length; i++) {
-			String primeNo = "";
-			primeNo=storePrime[i]+"";
-			//System.out.println(primeNo);
-			
-			
-			char[] storeCharS1 = new char[5];
-			char[] storeCharS2 = new char[5];
-/*
-			for (int i = 0; i < storeCharS1.length; i++) {
-				char ch = primeNo.charAt(i);
-				storeCharS1[i] = ch;
-			}
-
-			for (int i = 0; i < storeCharS2.length; i++) {
-				char ch = primeNo.charAt(i);
-				storeCharS2[i] = ch;
-			}
-
-
-	}*/
-	
-			}
 	}
-}
 
+	/**Prime No that are Anagram
+	 * 
+	 */
+	public static void getPrimeAnagram() {
+
+	int count1=0;	
+		 int[] primeArray=Utility.getPrime(); 
+		 
+		  for(int i=0;i<primeArray.length;i++)
+		 { if(primeArray[i]!=0) 
+			count1++;
+		 }
+		  int[] x=new int[count1]; 
+		  
+		  for(int i=0;i<x.length;i++)
+			 { if(primeArray[i]!=0) 
+				x[i]=primeArray[i];
+			 }
+		 
+		 
+
+/*	int[] x = {
+				2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101,
+				103, 107, 109, 113, 127, 131, 137, 139, 149, 151, 157, 163, 167, 173, 179, 181, 191, 193, 197, 199, 211,
+				223, 227, 229, 233, 239, 241, 251, 257, 263, 269, 271, 277, 281, 283, 293, 307, 311, 313, 317, 331, 337,
+				347, 349, 353, 359, 367, 373, 379, 383, 389, 397, 401, 409, 419, 421, 431, 433, 439, 443, 449, 457, 461,
+				463, 467, 479, 487, 491, 499, 503, 509, 521, 523, 541, 547, 557, 563, 569, 571, 577, 587, 593, 599, 601,
+				607, 613, 617, 619, 631, 641, 643, 647, 653, 659, 661, 673, 677, 683, 691, 701, 709, 719, 727, 733, 739,
+				743, 751, 757, 761, 769, 773, 787, 797, 809, 811, 821, 823, 827, 829, 839 };
+*/
+		
+		String[] sAray = new String[x.length];
+		String[] compareAray = new String[x.length];
+		for (int i = 0; i < x.length; i++) {
+			
+				sAray[i] = Integer.toString(x[i]);
+		}
+		int i = 0, j = 0, count = 0;
+		String s3 = "";
+
+		for (int m = 0; m < sAray.length; m++) {
+			String s1 = sAray[m];
+
+			char[] ch2 = new char[s1.length()];
+
+			for (i = 0; i < s1.length(); i++) {
+
+				char ch = s1.charAt(i);
+				ch2[i] = ch;
+			}
+			for (j = 0; j < ch2.length; j++) {
+				for (int k = j + 1; k < ch2.length; k++) {
+
+					if (ch2[j] > ch2[k]) {
+
+						char temp = ch2[j];
+						ch2[j] = ch2[k];
+						ch2[k] = temp;
+					}
+
+				}
+			}
+			s1 = "";
+			for (i = 0; i < ch2.length; i++)
+				s1 = s1 + ch2[i];
+
+			compareAray[m] = s1;
+
+		}
+
+		System.out.println("THe Prime Numbers that are Anagram of each other are as follows");
+		for (int p = 0; p < compareAray.length; p++) {
+
+			count = 0;
+			for (int q = p + 1; q < compareAray.length; q++) {
+				if (compareAray[p].equals(compareAray[q]) & (compareAray[p].equals("")) == false) {
+
+					System.out.println(x[q]);
+					compareAray[q] = "";
+					count++;
+
+				}
+			}
+			if (count > 0) {
+				System.out.println(x[p]);}
+
+		}
+
+	
+	}
+	
+	
+
+	}
+
+
+	
+	

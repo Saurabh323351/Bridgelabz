@@ -1,12 +1,19 @@
 package bridgelabz.programs.functional;
 
-public class EuclideanDistance {
+import com.bridgelab.utility.Utility;
 
+public class EuclideanDistance{
+static {
+	System.out.println("enter x and y through command line");
 
+}
+	
+	public static void main(String[] args) {
 
-	public static void getDistance(int x, int y) {
-		
-	  double EuclideanDistance=Math.sqrt(x*x+y*y);
-	  System.out.println("Your Euclidean Distance is => "+EuclideanDistance);
+		int x=Integer.parseInt(args[0]);
+		int y=Integer.parseInt(args[1]);
+Utility.getDistance(x,y);
+	
 	}
+
 }
